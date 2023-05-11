@@ -26,6 +26,16 @@ export class PortfolioComponent{
         "<span class=\"highlight centeringHighlight\">¡Gracias por visitar mi portfolio!</span>"
     ];
 
+    let parrafosFormacion = [
+      "Grado en Ingeniería Informática - Especialización en Computación",
+      "Máster de Profesorado de ESO, Bachillerato y Formación Profesional",
+      "Instructor CCNA Cisco",
+      "Cursos Angular 11 avanzado",
+      "Curso de SASS",
+      "Cursos de Docker: Production, Development y DevOps Professional"
+
+    ]
+
     let parrafosEmptyAux = ["hel", "lo"];
 
     this.listadoApartados = [
@@ -44,7 +54,7 @@ export class PortfolioComponent{
 
       },
       {
-        contenido: parrafosEmptyAux,
+        contenido: parrafosFormacion,
         seccion: secciones.formacion,
         ruta: "/formacion",
         titulo: "Formación y aptitudes"

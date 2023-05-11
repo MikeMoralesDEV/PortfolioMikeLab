@@ -1,13 +1,29 @@
 <div id="apartadoGeneral">
   <h1>{{apartado.titulo}}</h1>
-  <ng-container *ngFor="let contenido of apartado.contenido | slice:0:showCountOfApartados; let i=index">
-    <p [innerHTML]="contenido"></p>
-  </ng-container>
+    <!--    Div para cuando la seccion es formacion-->
+    <div class="listaFormacion" *ngIf="apartado.seccion == 'formacion' ">
+      <ng-container *ngFor="let contenido of apartado.contenido ; let i=index">
+        <div>
+          <mat-icon>{{listaIconos.at(i)}}</mat-icon><p [innerHTML]="contenido"></p>
+        </div>
+      </ng-container>
+      <div class="slider" >
+        <mat-icon (click)="change('back')">arrow_circle_left</mat-icon>
+        <div class="imagenContainer" #sliderFormacion><img class="imagenSlider" src="{{listaImagenes[actualSlider]}}" alt=""/></div>
+        <mat-icon (click)="change('next')">arrow_circle_right</mat-icon>
+      </div>
+    </div>
+    <!--    Div para cuando la seccion es general-->
+    <div *ngIf="apartado.seccion == 'general'" >
+      <ng-container *ngFor="let contenido of apartado.contenido | slice:0:showCountOfApartados; let i=index">
+        <p [innerHTML]="contenido"></p>
+      </ng-container>
+
+    </div>
 
   <div class="loading">
-    <button *ngIf="showCountOfApartados < 2" (click)="showMore()" class="more noselect">¡Quiero saber más!</button>
+    <button *ngIf="showCountOfApartados < 2 && apartado.contenido.length != 1 && apartado.seccion == 'general'" (click)="showMore()" class="more noselect">¡Quiero saber más!</button>
     <div  *ngIf="showCountOfApartados > 1 && showCountOfApartados != apartado.contenido.length" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
   </div>
-  <p>Apartados correspondientes a la sección {{apartado.seccion}} y estoy en la ruta {{router.url}}</p>
 
 </div>
