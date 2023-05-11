@@ -1,0 +1,232 @@
+/* You can add global styles to this file, and also import other style files */
+@import "custom-theme";
+
+$primary: map-get($portfolio-theme, primary);
+$menuColor: map_get($portfolio-accent, 700);
+
+
+html, body { height: 100%; }
+body { overflow-wrap: break-word; margin: 2vw; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: map-get($portfolio-primary, 900); color: map_get($portfolio-primary, default-contrast) }
+
+
+:root {
+  --phone-width: 350px;
+  --phone-height: 480px;
+  --phone-color: rgb(20, 20, 20);
+
+  --screen-color: rgb(10, 10, 10);
+  --app-width: 350px;
+  --app-height: 400px;
+  --app-bg: #090831;
+
+  --button-color: #432caf; //Color burbuja
+
+  --bg: #4a4a6a;
+
+  --phone-animation-duration: 1.2s;
+  --phone-animation-delay: 500ms;
+  --phone-animation-easing: ease;
+  --phone-animation-direction: forwards;
+
+  --screen-animation-duration: 0.8s;
+  --screen-animation-delay: 1800ms;
+  --screen-animation-easing: ease;
+  --screen-animation-direction: forwards;
+}
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+
+}
+
+button {
+  border: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.tabbar {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+
+  button,
+  .options {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  button {
+    --size: 40px;
+    --button-y-offset: -50%;
+    border: none;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    background: var(--button-color);
+    transform: translate(-50%, var(--button-y-offset));
+    transition: transform 500ms ease;
+    transition-delay: 200ms;
+    cursor: pointer;
+
+    top: 400%;
+    animation: button-pop-in-elastic 500ms cubic-bezier(0.185, 1.485, 0.35, 3.575)
+    var(--screen-animation-direction);
+    animation-delay: calc(1s + var(--screen-animation-delay));
+
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(-20%) rotate(0);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 500ms ease;
+      transition-delay: 200ms;
+      svg {
+        width: 50%;
+        height: 50%;
+        fill: none;
+        stroke: $accent-contrast; //Color del + del menu
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 60px;
+
+        transform: rotate(180deg);
+        animation: rotate 500ms cubic-bezier(0.185, 1.485, 0.35, 3.575)
+        var(--screen-animation-direction);
+        animation-delay: calc(1s + var(--screen-animation-delay));
+      }
+    }
+  }
+
+  .options {
+    width: var(--options-width);
+    height: var(--options-height);
+    transform: translate(-50%, var(--options-y-offset));
+    background: var(--button-color);
+    transition: transform 500ms ease;
+    transition-delay: 200ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      place-content: center;
+      grid-gap: 0.6rem;
+      clip-path: circle(0% at 50% 50%);
+      transition: clip-path 500ms ease;
+      span {
+        background: rgba(255, 255, 255, 0.2); //Color de los circulos del menu
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &--front,
+  &--back {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+  }
+
+  &--front {
+    --options-width: 100%;
+    --options-height: 400px;
+    --options-y-offset: 3%;
+    z-index: 2;
+    button {
+      --size: 40px;
+      z-index: 4;
+    }
+  }
+  &--back {
+    --options-width: 100px;
+    --options-height: 100px;
+    --options-y-offset: 10%;
+    filter: url(#goo);
+    button {
+      pointer-events: none;
+    }
+    z-index: 1;
+  }
+
+  &.show {
+    .tabbar--front {
+      --options-y-offset: -112%;
+      button {
+        --button-y-offset: -130%;
+      }
+      .icon {
+        transform: translateY(0%) rotate(45deg * 5);
+      }
+      .options {
+        &__wrapper {
+          clip-path: circle(100% at 50% 50%);
+          transition-delay: 400ms;
+        }
+      }
+    }
+    .tabbar--back {
+      --options-y-offset: -154%;
+      button {
+        --button-y-offset: -140%;
+      }
+    }
+  }
+}
+
+@keyframes show-phone {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide-screen-top {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@keyframes card-pop-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes button-pop-in-elastic {
+  to {
+    top: 50%;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(0deg);
+  }
+}
+

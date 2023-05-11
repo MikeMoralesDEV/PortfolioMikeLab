@@ -1,0 +1,23 @@
+<div id="bgPortfolio" #bgPortfolio>
+  <div id="nombre">
+    <h1 class="shadow">Miguel Morales</h1>
+
+  </div>
+</div>
+<div id="subtitle">
+  <p>Soy</p>
+  <b>
+    <div class="innerIam">
+      Profesor FP<br />
+      Programador<br />
+      Analista de Datos<br />
+      Autodidacta<br />
+      Ingeniero
+    </div>
+  </b>
+</div>
+<div id="portfolio">
+  <ng-container *ngFor="let apartado of listadoApartados">
+    <app-apartado *ngIf="apartado.ruta == router.url" [apartado]="apartado"></app-apartado>
+  </ng-container>
+</div>

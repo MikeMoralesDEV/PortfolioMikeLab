@@ -1,0 +1,13 @@
+<div id="apartadoGeneral">
+  <h1>{{apartado.titulo}}</h1>
+  <ng-container *ngFor="let contenido of apartado.contenido | slice:0:showCountOfApartados; let i=index">
+    <p [innerHTML]="contenido"></p>
+  </ng-container>
+
+  <div class="loading">
+    <button *ngIf="showCountOfApartados < 2" (click)="showMore()" class="more noselect">¡Quiero saber más!</button>
+    <div  *ngIf="showCountOfApartados > 1 && showCountOfApartados != apartado.contenido.length" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  </div>
+  <p>Apartados correspondientes a la sección {{apartado.seccion}} y estoy en la ruta {{router.url}}</p>
+
+</div>

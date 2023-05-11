@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+#bgPortfolio{
+  background-image: url("/assets/bgPortfolio.png");
+  min-width: 50vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: solid 5px #432caf;
+}
+
+#bgPortfolio #nombre{
+  position: absolute;
+  top: 58vh;
+  right: 1vw;
+
+}
+
+#portfolio{
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  left: 52vw;
+
+}
+
+#nombre h1 {
+  overflow: hidden; /* Para que no se muestre entero de golpe */
+  border-right: .015em solid #f02320; /* Usaremos el borde como barra de escritura */
+  white-space: nowrap; /* Para que no se salte de línea */
+  margin: 0 auto;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Sigmar', cursive;
+  color: white;
+  transform: rotate(2deg);
+  text-decoration: #d33939 underline dotted;
+  text-decoration-skip: ink;
+  opacity:.9;
+  text-shadow: -0.0075em 0.0075em 0 black, 0.005em 0.005em 0 black, 0.01em 0.01em 0 black, 0.015em 0.015em black, 0.02em 0.02em 0 black, 0.025em 0.025em 0 black, 0.03em 0.03em 0 black, 0.035em 0.035em 0 black;}
+
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #f02320; }
+}
+
+#subtitle{
+  font: normal 2rem/2.5rem 'Sigmar', cursive;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  right: 1vw;
+  z-index: 5;
+}
+
+#subtitle p{
+  height: 2.5rem;
+  float: left;
+  margin-right: 0.3em;
+}
+
+#subtitle b{
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 2.5rem;
+  top: 2rem;
+}
+
+.innerIam {
+  display: inline-block;
+  color: #e74c3c;
+  position: relative;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+
+
+  /*animation*/
+  -webkit-animation:move 10s;
+  -moz-animation:move 10s;
+  -ms-animation:move 10s;
+  -o-animation:move 10s;
+  animation:move 10s;
+  /*animation-iteration-count*/
+  -webkit-animation-iteration-count:infinite;
+  -moz-animation-iteration-count:infinite;
+  -ms-animation-iteration-count:infinite;
+  -o-animation-iteration-count:infinite;
+  animation-iteration-count:infinite;
+  /*animation-delay*/
+  -webkit-animation-delay:4s;
+  -moz-animation-delay:4s;
+  -ms-animation-delay:4s;
+  -o-animation-delay:4s;
+  animation-delay:4s;
+}
+@keyframes move{
+  0%  { top: 0px; }
+  20% { top: -2.5rem; }
+  40% { top: -5rem; }
+  60% { top: -7.5rem; }
+  80% { top: -10rem; }
+}
+
+@-webkit-keyframes move {
+  0%  { top: 0px; }
+  20% { top: -2.5rem; }
+  40% { top: -5rem; }
+  60% { top: -7.5rem; }
+  80% { top: -10rem; }
+}
+@-moz-keyframes move {
+  0%  { top: 0px; }
+  20% { top: -2.5rem; }
+  40% { top: -5rem; }
+  60% { top: -7.5rem; }
+  80% { top: -10rem; }
+}
+@-o-keyframes move {
+  0%  { top: 0px; }
+  20% { top: -2.5rem; }
+  40% { top: -5rem; }
+  60% { top: -7.5rem; }
+  80% { top: -10rem; }
+}
+@keyframes move {
+  0%  { top: 0px; }
+  20% { top: -2.5rem; }
+  40% { top: -5rem; }
+  60% { top: -7.5rem; }
+  80% { top: -10rem; }
+}
