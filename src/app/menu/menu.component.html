@@ -11,25 +11,25 @@
     <div class="options">
       <div class="options__wrapper">
         <span >
-          <mat-icon [routerLink]="['']"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-label="home icon" fontIcon="home" ></mat-icon>
+          <mat-icon [routerLink]="['']"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" #tooltip="matTooltip" matTooltip="Introducción" aria-label="home icon" fontIcon="home" ></mat-icon>
         </span>
         <span >
-          <mat-icon [routerLink]="['formacion']"  routerLinkActive="active" aria-label="home icon" fontIcon="home"></mat-icon>
+          <mat-icon [routerLink]="['formacion']" #tooltip="matTooltip" matTooltip="Formación" routerLinkActive="active" aria-label="school icon" fontIcon="school"></mat-icon>
         </span>
         <span>
-          <mat-icon [routerLink]="['/test']"  routerLinkActive="active" id="homeButton" aria-label="home icon" fontIcon="home"></mat-icon>
+          <mat-icon [routerLink]="['experiencia']" #tooltip="matTooltip" matTooltip="Experiencia Laboral" routerLinkActive="active" aria-label="work icon" fontIcon="work"></mat-icon>
         </span>
         <span>
-          <mat-icon id="homeButton" aria-label="home icon" fontIcon="home"></mat-icon>
+          <mat-icon [routerLink]="['hobbies']" #tooltip="matTooltip" matTooltip="Hobbies"  routerLinkActive="active" aria-label="music_note icon"  fontIcon="music_note"></mat-icon>
         </span>
         <span>
-          <mat-icon id="homeButton" aria-label="home icon" fontIcon="home"></mat-icon>
+          <mat-icon [routerLink]="['contacto']" #tooltip="matTooltip" matTooltip="Contacto"  routerLinkActive="active" aria-label="email icon" fontIcon="email"></mat-icon>
         </span>
         <span>
-          <mat-icon id="homeButton" aria-label="home icon" fontIcon="home"></mat-icon>
+          <a href="https://github.com/mikemoralesdev" target="_blank"><img #tooltip="matTooltip" matTooltip="GitHub" src="../assets/github.svg" alt="GitHub"/></a>
         </span>
         <span>
-          <mat-icon id="homeButton" aria-label="home icon" fontIcon="home"></mat-icon>
+          <a href="https://www.linkedin.com/in/miguel-morales-carmona-a8949b103/" target="_blank"><img #tooltip="matTooltip" matTooltip="LinkedIn" src="../assets/linkedin.svg" alt="LinkedIn"/></a>
         </span>
         <span>
           <mat-icon id="homeButton" aria-label="home icon" fontIcon="home"></mat-icon>

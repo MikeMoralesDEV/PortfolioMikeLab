@@ -8,5 +8,6 @@ mat-icon{
 .active{
 
   color: red;
-
+  filter: drop-shadow(1px 1px 5px whitesmoke);
+  -webkit-filter: drop-shadow(1px 1px 5px whitesmoke);
 }

@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.listaFormacion div{
+.listaFormacion div, .listaLaboral{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -265,6 +265,82 @@ button{
   justify-content: center;
 }
 
+mat-panel-title{
+  justify-content: center;
+}
+
+mat-expansion-panel-header{
+  background-color: #5c38be !important;
+}
 
 
+mat-panel-title{
+  color: white !important;
+  filter: drop-shadow(1px 1px 1px black);
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+}
 
+mat-expansion-panel:nth-child(1){
+  border-bottom: #1B1B1B 1px solid;
+}
+
+.listaProyectos{
+  display: flex;
+  min-width: 100%;
+  flex-wrap: wrap;
+
+}
+
+.proyecto{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  min-width: 33%;
+  align-items: center;
+  /*No se adapta sin este borde blanco*/
+  border: 1px solid white;
+  overflow: hidden;
+  flex: 1;
+  cursor: pointer;
+
+}
+
+.proyecto img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#clickProyecto{
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#controlesProyectos{
+  max-width: 100%;
+  height: fit-content;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+#controlesProyectos mat-icon{
+  cursor: pointer;
+  margin: 0;
+}
+
+#paginacion{
+  font-size: 0.75em;
+  position: relative;
+  right: 0;
+}
+
+.backdropBackground {
+  background-color: rgba(0, 0, 0, 0.3);
+
+}

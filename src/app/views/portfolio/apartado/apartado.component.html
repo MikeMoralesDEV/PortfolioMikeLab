@@ -1,10 +1,10 @@
 <div id="apartadoGeneral">
   <h1>{{apartado.titulo}}</h1>
     <!--    Div para cuando la seccion es formacion-->
-    <div class="listaFormacion" *ngIf="apartado.seccion == 'formacion' ">
+    <div *ngIf="apartado.seccion == 'formacion'" class="listaFormacion" >
       <ng-container *ngFor="let contenido of apartado.contenido ; let i=index">
         <div>
-          <mat-icon>{{listaIconos.at(i)}}</mat-icon><p [innerHTML]="contenido"></p>
+          <mat-icon>{{listaIconos[0].at(i)}}</mat-icon><p [innerHTML]="contenido"></p>
         </div>
       </ng-container>
       <div class="slider" >
@@ -14,11 +14,51 @@
       </div>
     </div>
     <!--    Div para cuando la seccion es general-->
-    <div *ngIf="apartado.seccion == 'general'" >
+    <div *ngIf="apartado.seccion == 'general'">
       <ng-container *ngFor="let contenido of apartado.contenido | slice:0:showCountOfApartados; let i=index">
         <p [innerHTML]="contenido"></p>
       </ng-container>
 
+    </div>
+    <!--    Div para cuando la seccion es experiencia-->
+    <div *ngIf="apartado.seccion == 'experiencia'"  >
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Laborales
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ng-container *ngFor="let contenido of apartado.contenido ; let i=index">
+            <div class="listaLaboral">
+              <mat-icon>{{listaIconos[1].at(i)}}</mat-icon><p [innerHTML]="contenido"></p>
+            </div>
+          </ng-container>
+        </mat-expansion-panel>
+        <mat-expansion-panel  >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Proyectos personales
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div id="clickProyecto"><mat-icon>ads_click</mat-icon><span>Click en los proyectos para más información</span></div>
+          <div class="listaProyectos">
+            <ng-container *ngFor="let proyecto of proyectosPagina">
+              <div class="proyecto" (click)="abrirProyecto(proyecto.titulo)">
+                <h2 [innerHTML]="proyecto.titulo"></h2>
+                <img [src]="proyecto.ruta" alt=""/>
+              </div>
+            </ng-container>
+          </div>
+          <div id="controlesProyectos">
+            <mat-icon (click)="anteriorPagina()">arrow_circle_left</mat-icon>
+            <mat-icon (click)="siguientePagina()">arrow_circle_right</mat-icon>
+          </div>
+          <div id="paginacion">
+            <span>Páginas {{paginaActual}} / {{cantidadPaginas+1}}</span>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
 
   <div class="loading">

@@ -36,7 +36,11 @@ export class PortfolioComponent{
 
     ]
 
-    let parrafosEmptyAux = ["hel", "lo"];
+    let parrafosExperiencia = [
+      "Prácticas de Empresa en AICOR como desarrollador Ionic",
+      "Apoyo a la investigación en el Departamento de Hidráulica - Universidad de Córdoba - 2017-2018",
+      "Docente de Formación Profesional en la Junta de Andalucía de 2018 a la actualidad"
+    ];
 
     this.listadoApartados = [
 
@@ -47,7 +51,7 @@ export class PortfolioComponent{
         titulo: "Un poco sobre mí"
       },
       {
-        contenido : parrafosEmptyAux,
+        contenido : parrafosExperiencia,
         seccion: secciones.experiencia,
         ruta: "/experiencia",
         titulo: "Mis experiencias"
