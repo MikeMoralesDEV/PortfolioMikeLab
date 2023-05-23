@@ -1,0 +1,47 @@
+
+#wrapper{
+  display: grid;
+  max-width: 90vh;
+  max-height: 90vh;
+  color: black;
+  margin: 2vw;
+  row-gap: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 8fr;
+  grid-template-areas:  ". titulo ."
+                        "contenido contenido contenido"
+                        ". . estado"
+                        ". imagen .";
+}
+
+mat-icon{
+  cursor: pointer;
+  position: absolute;
+  top: 1vw;
+  right: 2vw;
+  font-size: 2em;
+  overflow: visible;
+}
+
+#titulo{
+  text-align: center;
+  grid-area: titulo;
+}
+
+#contenido{
+  grid-area: contenido;
+}
+
+#estado{
+  grid-area: estado;
+}
+
+#imagen{
+  grid-area: imagen;
+}
+
+#imagen img{
+  max-width: 100%;
+
+}
+

@@ -1,0 +1,17 @@
+
+<div id="wrapper">
+  <mat-icon (click)="cancelar()">close</mat-icon>
+  <div id="titulo">
+    <h1>{{data.titulo}}</h1>
+  </div>
+  <div id="contenido">
+    <p>{{data.contenido}}</p>
+  </div>
+  <div id="estado">
+    <span>Estado : <span style="font-weight: bold">{{data.estado}}</span></span>
+  </div>
+  <div id="imagen">
+    <img [src]="data.ruta" alt="">
+  </div>
+
+</div>
